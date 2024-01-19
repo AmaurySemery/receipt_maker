@@ -40,7 +40,7 @@ export default function EstimateForm() {
           id="paymentDate"
           {...register("paymentDate", { required: true })}
         />
-        <span className={ styles.formerror } >{errors.estimateDate && "Please, enter an payment date"}</span>
+        <span className={ styles.formerror } >{errors.estimateDate && "Please, enter a payment date"}</span>
 
         <input type="submit" value="create estimate" />
       </form>
