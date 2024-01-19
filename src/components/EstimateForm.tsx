@@ -1,5 +1,6 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { Estimate } from '../App';
+import styles from './EstimateForm.module.css';
 
 export default function EstimateForm() {
     const {
@@ -8,37 +9,38 @@ export default function EstimateForm() {
       formState: { errors },
     } = useForm<Estimate>();
     const onSubmit: SubmitHandler<Estimate> = (data) => console.log(data);
-    
+
     return (
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <label htmlFor="estimateNumber">Estimate Number</label>
+      <form onSubmit={handleSubmit(onSubmit)} className={ styles.form } >
+        <label htmlFor="estimateNumber" className={ styles.formlabel } >Estimate Number</label>
         <input
+          className={ styles.forminput } 
           type="text"
           placeholder="Estimate Number"
           id="estimateNumber"
           {...register("estimateNumber", { required: true })}
         />
-        <span>
+        <span className={ styles.formerror } >
           {errors.estimateNumber && "Please, enter an estimate number"}
         </span>
 
-        <label htmlFor="estimateDate">Estimate Date</label>
+        <label htmlFor="estimateDate" className={ styles.formlabel } >Estimate Date</label>
         <input
-          type="text"
-          placeholder="Estimate Date"
+          className={ styles.forminput }
+          type="date"
           id="estimateDate"
           {...register("estimateDate", { required: true })}
         />
-        <span>{errors.estimateDate && "Please, enter an estimate date"}</span>
+        <span className={ styles.formerror } >{errors.estimateDate && "Please, enter an estimate date"}</span>
 
-        <label htmlFor="paymentDate">Payment Date</label>
+        <label htmlFor="paymentDate" className={ styles.formlabel } >Payment Date</label>
         <input
-          type="text"
-          placeholder="Payment Date"
+          className={ styles.forminput }
+          type="date"
           id="paymentDate"
           {...register("paymentDate", { required: true })}
         />
-        <span>{errors.estimateDate && "Please, enter an payment date"}</span>
+        <span className={ styles.formerror } >{errors.estimateDate && "Please, enter an payment date"}</span>
 
         <input type="submit" value="create estimate" />
       </form>
