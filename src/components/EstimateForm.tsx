@@ -170,6 +170,9 @@ export default function EstimateForm() {
                       "Please, enter the deposit amount"}
                   </div>
                 </div>
+
+                <button type='button' onClick={() => { remove(index) }}>Delete</button>
+
               </section>
             </div>
           );
