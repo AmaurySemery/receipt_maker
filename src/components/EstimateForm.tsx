@@ -171,7 +171,7 @@ export default function EstimateForm() {
                   </div>
                 </div>
 
-                <button type='button' onClick={() => { remove(index) }}>Delete</button>
+                <button type='button' onClick={() => { remove(index) }} className={styles.delete} >Delete</button>
 
               </section>
             </div>
