@@ -80,6 +80,96 @@ export default function EstimateForm() {
                       "Please, enter a reference"}
                   </div>
                 </div>
+
+                <div>
+                  <label htmlFor="taskDescription" className={styles.formlabel}>
+                    Item Description
+                  </label>
+                  <input
+                    type="text"
+                    id="taskDescription"
+                    {...register(`tasks.${index}.description` as const, {
+                      required: true,
+                    })}
+                    className={styles.forminput}
+                  />
+                  <div className={styles.formerror}>
+                    {errors?.tasks?.[index]?.description &&
+                      "Please, enter a description"}
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="taskQuantity" className={styles.formlabel}>
+                    Item Quantity
+                  </label>
+                  <input
+                    type="number"
+                    id="taskQuantity"
+                    {...register(`tasks.${index}.quantity` as const, {
+                      required: true,
+                    })}
+                    className={styles.forminput}
+                  />
+                  <div className={styles.formerror}>
+                    {errors?.tasks?.[index]?.quantity &&
+                      "Please, enter a quantity"}
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="taskPrice" className={styles.formlabel}>
+                    Item Unit Price
+                  </label>
+                  <input
+                    type="number"
+                    id="taskPrice"
+                    {...register(`tasks.${index}.unitPrice` as const, {
+                      required: true,
+                    })}
+                    className={styles.forminput}
+                  />
+                  <div className={styles.formerror}>
+                    {errors?.tasks?.[index]?.unitPrice &&
+                      "Please, enter a price"}
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="taskVAT" className={styles.formlabel}>
+                    VAT (in %)
+                  </label>
+                  <input
+                    type="number"
+                    id="taskVAT"
+                    {...register(`tasks.${index}.vat` as const, {
+                      required: true,
+                    })}
+                    className={styles.forminput}
+                  />
+                  <div className={styles.formerror}>
+                    {errors?.tasks?.[index]?.vat &&
+                      "Please, enter a VAT (WITHOUT %)"}
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="taskDeposit" className={styles.formlabel}>
+                    VAT (in %)
+                  </label>
+                  <input
+                    type="number"
+                    id="taskDeposit"
+                    {...register(`tasks.${index}.deposit` as const, {
+                      required: true,
+                    })}
+                    className={styles.forminput}
+                  />
+                  <div className={styles.formerror}>
+                    {errors?.tasks?.[index]?.deposit &&
+                      "Please, enter the deposit amount"}
+                  </div>
+                </div>
               </section>
             </div>
           );
@@ -88,10 +178,10 @@ export default function EstimateForm() {
           type="button"
           onClick={() => {
             append({
-              reference: "12345",
-              description: "describe the item",
+              reference: "",
+              description: "",
               quantity: 1,
-              unitPrice: 100,
+              unitPrice: 0,
               vat: 20,
               deposit: 0,
             });

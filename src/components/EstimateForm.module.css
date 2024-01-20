@@ -30,3 +30,8 @@
     font-size: var(--font-size);
     cursor: pointer;
 }
+
+.task {
+    margin: 1rem 0rem;
+    padding-bottom: 1rem;
+}
