@@ -2,6 +2,7 @@
     margin: 2rem;
     border: 2px solid black;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .estimateheader {
@@ -10,7 +11,7 @@
 }
 
 .container {
-    border-color: rgb(189, 231, 247);
+    background-color: rgb(26, 71, 88);
 }
 
 .details {
