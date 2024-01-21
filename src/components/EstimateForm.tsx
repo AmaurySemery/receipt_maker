@@ -26,6 +26,19 @@ export default function EstimateForm({ onEstimateCreate }: estimateFormProps) {
 
     return (
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+        <label htmlFor="estimateTitle" className={styles.formlabel}>
+          Estimate Title
+        </label>
+        <input
+          {...register("title", { required: true })}
+          placeholder="Estimate title"
+          id="estimateTitle"
+          className={styles.forminput}
+        />
+        <span className={styles.formerror}>
+          {errors.title && "Please, enter an estimate title"}
+        </span>
+
         <label htmlFor="estimateNumber" className={styles.formlabel}>
           Estimate Number
         </label>
@@ -178,8 +191,15 @@ export default function EstimateForm({ onEstimateCreate }: estimateFormProps) {
                   </div>
                 </div>
 
-                <button type='button' onClick={() => { remove(index) }} className={styles.delete} >Delete</button>
-
+                <button
+                  type="button"
+                  onClick={() => {
+                    remove(index);
+                  }}
+                  className={styles.delete}
+                >
+                  Delete
+                </button>
               </section>
             </div>
           );
