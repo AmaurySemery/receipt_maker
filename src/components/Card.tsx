@@ -1,4 +1,5 @@
 import { Estimate } from "../App";
+import styles from './Card.module.css';
 
 type cardProps = {
   data: Estimate;
@@ -10,9 +11,10 @@ export default function Card({ data }: cardProps) {
   }
   return (
     <>
+    <div className={styles.card}>
       <h3>{data.title}</h3>
-      <div>
-        <div>
+      <div className={styles.container}>
+        <div className={styles.estimateheader}>
           <div>Reference</div>
           <div>Description</div>
           <div>Quantity</div>
@@ -23,7 +25,7 @@ export default function Card({ data }: cardProps) {
         </div>
         {data.tasks.map((t) => {
           return (
-            <div key={t.reference}>
+            <div key={t.reference} className={styles.details}>
               <div>{t.reference}</div>
               <div>{t.description}</div>
               <div>{t.quantity}</div>
@@ -34,6 +36,7 @@ export default function Card({ data }: cardProps) {
             </div>
           );
         })}
+      </div>
       </div>
     </>
   );

@@ -1,0 +1,55 @@
+.card {
+    margin: 2rem;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.estimateheader {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.container {
+    border-color: rgb(189, 231, 247);
+}
+
+.details {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "ref desc qty uprice depo vat subto";
+}
+
+.details > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ref {
+    grid-area: ref;
+}
+
+.desc {
+    grid-area: desc;
+}
+
+.qty {
+    grid-area: qty;
+}
+
+.uprice {
+    grid-area: uprice;
+}
+
+.depo {
+    grid-area: depo;
+}
+
+.vat {
+    grid-area: vat;
+}
+
+.subto {
+    grid-area: subto;
+}
