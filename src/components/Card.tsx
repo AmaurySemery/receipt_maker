@@ -9,6 +9,19 @@ export default function Card({ data }: cardProps) {
   function calculateSubtotal(quantity: number, unitPrice: number) {
     return (quantity * unitPrice).toFixed(2);
   }
+  function calculateTotalWithoutTaxes() {
+    const totalBeforeTaxes = data.tasks.reduce((acc, curr) => {
+        return acc += (curr.quantity * curr.unitPrice)
+    }, 0);
+    return totalBeforeTaxes;
+  }
+  function calculateTaxes() {
+    const totalTaxes = data.tasks.reduce((acc, curr) => {
+        return acc += ((curr.quantity * curr.unitPrice) * curr.vat) / 100
+    }, 0);
+    return totalTaxes;
+  }
+
   return (
     <>
     <div className={styles.card}>
@@ -36,6 +49,20 @@ export default function Card({ data }: cardProps) {
             </div>
           );
         })}
+        <div>
+            <div className={styles.total}>
+                <div>Total (without taxes)</div>
+                <div>€ {calculateTotalWithoutTaxes().toFixed(2)}</div>
+            </div>
+            <div>Total taxes</div>
+            <div>€{ calculateTaxes().toFixed(2) }</div>
+            <div>
+                <div>
+                    Total taxes included
+                </div>
+                <div>€ { (calculateTotalWithoutTaxes() + calculateTaxes()).toFixed(2)}</div>
+            </div>
+        </div>
       </div>
       </div>
     </>
