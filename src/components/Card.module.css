@@ -3,11 +3,12 @@
     border: 2px solid black;
     border-radius: 10px;
     overflow: hidden;
+    background-color: rgb(26, 71, 88);
 }
 
 .estimateheader {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(7, 1fr);    
 }
 
 .container {
