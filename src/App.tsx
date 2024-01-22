@@ -79,7 +79,57 @@ const mockData: Estimate[] = [
         vat: 20
       },
     ]
-  }
+  },
+  {
+    id: '3',
+    estimateNumber: '345',
+    estimateDate: new Date('14/12/11'),
+    paymentDate: new Date('15/31/2022'),
+    title: 'Garden',
+    tasks: [
+      {
+        reference: 'lwm',
+        description: 'French kiss',
+        quantity: 1,
+        unitPrice: 10.99,
+        deposit: 0,
+        vat: 20
+      },
+      {
+        reference: 'char',
+        description: 'Dassault',
+        quantity: 6,
+        unitPrice: 50000,
+        deposit: 5,
+        vat: 20
+      },
+    ]
+  },
+  {
+    id: '4',
+    estimateNumber: '215',
+    estimateDate: new Date('01/12/11'),
+    paymentDate: new Date('01/03/2023'),
+    title: 'Garage',
+    tasks: [
+      {
+        reference: 'sdbgv',
+        description: 'Voiture',
+        quantity: 1,
+        unitPrice: 12000,
+        deposit: 100,
+        vat: 20
+      },
+      {
+        reference: 'sdfq',
+        description: 'essence',
+        quantity: 50,
+        unitPrice: 1.60,
+        deposit: 200,
+        vat: 20
+      },
+    ]
+  },
 ]
 
 // To make sure there's only a single instance of an EstimateSrv
