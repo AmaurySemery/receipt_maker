@@ -15,4 +15,12 @@ export class EstimateService {
       return this.estimateCollection;
       ;
     }
+
+    getEstimateById(id: string) : Estimate | undefined {
+      const result = this.estimateCollection.find(est => est.id === id);
+      if (result === undefined) { 
+        return undefined
+      }
+      return result;
+    }
 }
