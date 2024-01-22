@@ -8,6 +8,9 @@ export class EstimateService {
     }
 
     createEstimate(data: Estimate) {
+      if (data.id === undefined) {
+        data.id = Date.now().toString();
+      }
       this.estimateCollection = [data, ...this.estimateCollection];
     }
     

@@ -25,8 +25,12 @@ export default function PDFprinter({ children }: PDFprinterProps ) {
         pdf.save('print.pdf');
     }
 
-    return <div>
-        <button type="button" onClick={handleDownloadPDF}>Download as PDF</button>
-        <div ref={printRef}>{ children }</div>
-    </div>
+    return (
+      <div>
+        <div ref={printRef}>{children}</div>
+        <button type="button" onClick={handleDownloadPDF}>
+          Download as PDF
+        </button>
+      </div>
+    );
 }
